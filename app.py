@@ -22,7 +22,7 @@ def pdfToTTS(pageContent):
     print("TTS engine initialized \n*Enter speech rate*")
     speechRate = int(input())
     engine.setProperty('rate', speechRate)
-    print("Speech rate set to %d \nEnter 0 for Female voice or 1 for Male voice" %speechRate)
+    print("Speech rate set to %d \nEnter 0 for Male voice or 1 for Female voice" %speechRate)
     voiceChoice = int(input())
     voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[voiceChoice].id)
