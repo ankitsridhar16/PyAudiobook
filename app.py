@@ -4,7 +4,7 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 # Takes the page number to extract 
 # Text from the pdf using PyPDF2
 def parsePDF(page):
-    inputPDF = PdfFileReader(open("sample.pdf", "rb"))
+    inputPDF = PdfFileReader(open("multipage-sample.pdf", "rb"))
     getPageObj = inputPDF.getPage(int(page))
     pageContent = getPageObj.extractText()
     if pageContent is not None:
@@ -12,6 +12,19 @@ def parsePDF(page):
         pdfToTTS(str(pageContent))
     else:
         print("Parsing error occured!")
+
+def parseAllPDF(file):
+    inputPDF = PdfFileReader(open(file, "rb"))
+    totalNumPages = inputPDF.getNumPages();
+    allPagesContent = ''
+    for i in range(totalNumPages):
+        getPageObj = inputPDF.getPage(i)
+        pageContent = getPageObj.extractText() 
+        if pageContent is not None:
+            allPagesContent += pageContent
+        else:
+            print("Parsing error occured")
+    pdfToTTS(allPagesContent)
 
 
 # Extracted text sent to pyttsx3
@@ -36,8 +49,7 @@ def pdfToTTS(pageContent):
      
 
 if __name__ == "__main__":
-    print("\Welcome to PyAudiobook\ \n*Enter Page Number to read out*")
-    page = int(input())
-    parsePDF(page)
-
+    print("\Welcome to PyAudiobook\ \n*Enter Filename: *")
+    fileName = input()
+    parseAllPDF(fileName)
 
