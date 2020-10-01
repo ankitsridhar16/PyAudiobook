@@ -15,16 +15,16 @@ def parsePDF(page):
 
 def parseAllPDF(file):
     inputPDF = PdfFileReader(open(file, "rb"))
-    numPages = inputPDF.getNumPages();
-    allPdf = ''
-    for i in range(numPages):
+    totalNumPages = inputPDF.getNumPages();
+    allPagesContent = ''
+    for i in range(totalNumPages):
         getPageObj = inputPDF.getPage(i)
         pageContent = getPageObj.extractText() 
         if pageContent is not None:
-            allPdf += pageContent
+            allPagesContent += pageContent
         else:
             print("Parsing error occured")
-    pdfToTTS(allPdf)
+    pdfToTTS(allPagesContent)
 
 
 # Extracted text sent to pyttsx3
