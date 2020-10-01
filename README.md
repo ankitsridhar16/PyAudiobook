@@ -1,7 +1,7 @@
 # PyAudiobook :blue_book:
-- **PyAudiobook** is an *awesome* tool that convert a `PDF` in a audiobook :scream: 
-- With this tool, you can ~~read~~ listen a book while you wash the dishes :sunglasses:
-- You can even save as `.mp3` and listen in your *iPod Classic* if you're a old timer, or just send to your *smartphone* and listen anywhere you want :headphones:
+- **PyAudiobook** is an *awesome* tool that convert a `PDF` into an audiobook :scream: 
+- With this tool, you can just ~~read~~ listen a book while you wash the dishes :sunglasses:
+- You can also save it as `.mp3` extension and listen in your *iPod Classic* if you're an old timer, or just send to your *smartphone* and listen anytime and also anywhere you want :headphones:
 
 ## Install :arrow_down:
 - Make sure you have `python3` and `pip3` installed. Not sure how? Check this master (but simple) [guide](https://realpython.com/installing-python/) how to do it ;
@@ -18,5 +18,5 @@
 - Run `$ pip3 uninstall -r requirements.txt` ;
 
 ## Troubleshooting
-- If you recieve errors such as `No module named win32com.client`, `No module named win32`, or `No module named win32api`, you will need to additionally install `pypiwin32`;
+- If you recieve errors such as `No module named win32com.client`, `No module named win32`, or `No module named win32api`, you will need to additionally install `pypiwin32`; to resolve the problem
 
